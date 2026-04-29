@@ -1,5 +1,6 @@
 package com.elsanty.backend.service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -35,13 +36,22 @@ public class ClienteService {
 	
 	public ClienteResponseDTO crear(ClienteRequestDTO dto) {
 		Cliente c = new Cliente();
+		
+		c.setFechaAlta(LocalDate.now());
 		c.setNombre(dto.nombre);
 		c.setTelefono(dto.telefono);
 		c.setCorreoElectronico(dto.correoElectronico);
+		c.setProvincia(dto.provincia);
 		c.setLocalidad(dto.localidad);
 		c.setBarrioPrivado(dto.barrioPrivado);
 		c.setDireccion(dto.direccion);
-		c.setAlturaLote(dto.alturaLote);
+		c.setBarrio(dto.barrio);
+		c.setLote(dto.lote);
+		c.setPreferenciaCorte(dto.preferenciaCorte);
+		c.setPreferenciaHoraria(dto.preferenciaHoraria);
+		c.setPreferenciaSemanal(dto.preferenciaSemanal);
+		c.setPrioridad(dto.prioridad);
+		c.setObservaciones(dto.observaciones);
 		c.setActivo(true);
 		
 		return toDTO(repo.save(c));
@@ -53,10 +63,17 @@ public class ClienteService {
 		c.setNombre(dto.nombre);
 		c.setTelefono(dto.telefono);
 		c.setCorreoElectronico(dto.correoElectronico);
+		c.setProvincia(dto.provincia);
 		c.setLocalidad(dto.localidad);
 		c.setBarrioPrivado(dto.barrioPrivado);
 		c.setDireccion(dto.direccion);
-		c.setAlturaLote(dto.alturaLote);
+		c.setBarrio(dto.barrio);
+		c.setLote(dto.lote);
+		c.setPreferenciaCorte(dto.preferenciaCorte);
+		c.setPreferenciaHoraria(dto.preferenciaHoraria);
+		c.setPreferenciaSemanal(dto.preferenciaSemanal);
+		c.setPrioridad(dto.prioridad);
+		c.setObservaciones(dto.observaciones);
 		c.setActivo(dto.activo);
 
 		return toDTO(repo.save(c));
@@ -72,15 +89,25 @@ public class ClienteService {
 	
 	private ClienteResponseDTO toDTO(Cliente c) {
 		ClienteResponseDTO dto = new ClienteResponseDTO();
+		
 		dto.id = c.getId();
+		dto.fechaAlta = c.getFechaAlta();
 		dto.nombre = c.getNombre();
 		dto.telefono = c.getTelefono();
 		dto.correoElectronico = c.getCorreoElectronico();
+		dto.provincia = c.getProvincia();
 		dto.localidad = c.getLocalidad();
 		dto.barrioPrivado = c.isBarrioPrivado();
 		dto.direccion = c.getDireccion();
-		dto.alturaLote = c.getAlturaLote();
+		dto.barrio = c.getBarrio();
+		dto.lote = c.getLote();
+		dto.preferenciaCorte = c.getPreferenciaCorte();
+		dto.preferenciaHoraria = c.getPreferenciaHoraria();
+		dto.preferenciaSemanal = c.getPreferenciaSemanal();
+		dto.prioridad = c.getPrioridad();
+		dto.observaciones = c.getObservaciones();
 		dto.activo = c.isActivo();
+		
 		return dto;
 	}
 
