@@ -40,6 +40,11 @@ public class Cliente {
 	private Horarios preferenciaHoraria;
 	private String preferenciaSemanal; //dias de la semana.
 	
+	private Double metrosCuadrados;
+	private boolean tienePileta;
+	private Double metrosPileta;
+	private boolean tieneRiego;
+	
 	@Enumerated(EnumType.STRING)
 	private Prioridades prioridad;
 	private String observaciones;
@@ -101,6 +106,22 @@ public class Cliente {
 
 	public String getPreferenciaSemanal() {
 		return preferenciaSemanal;
+	}
+
+	public Double getMetrosCuadrados() {
+		return metrosCuadrados;
+	}
+
+	public boolean isTienePileta() {
+		return tienePileta;
+	}
+
+	public Double getMetrosPileta() {
+		return metrosPileta;
+	}
+
+	public boolean isTieneRiego() {
+		return tieneRiego;
 	}
 
 	public Prioridades getPrioridad() {
@@ -168,6 +189,22 @@ public class Cliente {
 		this.preferenciaSemanal = preferenciaSemanal;
 	}
 
+	public void setMetrosCuadrados(Double metrosCuadrados) {
+		this.metrosCuadrados = metrosCuadrados;
+	}
+
+	public void setTienePileta(boolean tienePileta) {
+		this.tienePileta = tienePileta;
+	}
+
+	public void setMetrosPileta(Double metrosPileta) {
+		this.metrosPileta = metrosPileta;
+	}
+
+	public void setTieneRiego(boolean tieneRiego) {
+		this.tieneRiego = tieneRiego;
+	}
+
 	public void setPrioridad(Prioridades prioridad) {
 		this.prioridad = prioridad;
 	}
@@ -180,5 +217,5 @@ public class Cliente {
 		this.activo = activo;
 	}
 
-
+	
 }
