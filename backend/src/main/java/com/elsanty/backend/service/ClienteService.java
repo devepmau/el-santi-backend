@@ -50,6 +50,10 @@ public class ClienteService {
 		c.setPreferenciaCorte(dto.preferenciaCorte);
 		c.setPreferenciaHoraria(dto.preferenciaHoraria);
 		c.setPreferenciaSemanal(dto.preferenciaSemanal);
+		c.setMetrosCuadrados(dto.metrosCuadrados);
+		c.setTienePileta(dto.tienePileta);
+		c.setMetrosPileta(dto.metrosPileta);
+		c.setTieneRiego(dto.tieneRiego);
 		c.setPrioridad(dto.prioridad);
 		c.setObservaciones(dto.observaciones);
 		c.setActivo(true);
@@ -72,6 +76,10 @@ public class ClienteService {
 		c.setPreferenciaCorte(dto.preferenciaCorte);
 		c.setPreferenciaHoraria(dto.preferenciaHoraria);
 		c.setPreferenciaSemanal(dto.preferenciaSemanal);
+		c.setMetrosCuadrados(dto.metrosCuadrados);
+		c.setTienePileta(dto.tienePileta);
+		c.setMetrosPileta(dto.metrosPileta);
+		c.setTieneRiego(dto.tieneRiego);
 		c.setPrioridad(dto.prioridad);
 		c.setObservaciones(dto.observaciones);
 		c.setActivo(dto.activo);
@@ -104,6 +112,10 @@ public class ClienteService {
 		dto.preferenciaCorte = c.getPreferenciaCorte();
 		dto.preferenciaHoraria = c.getPreferenciaHoraria();
 		dto.preferenciaSemanal = c.getPreferenciaSemanal();
+		dto.metrosCuadrados = c.getMetrosCuadrados();
+		dto.tienePileta = c.isTienePileta();
+		dto.metrosPileta = c.getMetrosPileta();
+		dto.tieneRiego = c.isTieneRiego();
 		dto.prioridad = c.getPrioridad();
 		dto.observaciones = c.getObservaciones();
 		dto.activo = c.isActivo();
