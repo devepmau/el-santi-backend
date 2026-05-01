@@ -22,6 +22,10 @@ public class ClienteResponseDTO {
 	public Cortes preferenciaCorte;
 	public Horarios preferenciaHoraria;
 	public String preferenciaSemanal;
+	public Double metrosCuadrados;
+	public boolean tienePileta;
+	public Double metrosPileta;
+	public boolean tieneRiego;
 	public Prioridades prioridad;
 	public String observaciones;
 	public boolean activo;

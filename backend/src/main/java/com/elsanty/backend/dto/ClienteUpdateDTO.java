@@ -7,6 +7,7 @@ import com.elsanty.backend.enums.Prioridades;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 
 public class ClienteUpdateDTO {
@@ -46,6 +47,16 @@ public class ClienteUpdateDTO {
 	public Horarios preferenciaHoraria;
 	
 	public String preferenciaSemanal;
+	
+	@Positive(message = "Los metros cuadrados deben ser mayores a 0")
+	public Double metrosCuadrados;
+	
+	public boolean tienePileta;
+	
+	@Positive(message = "Los metros de la pileta deben ser mayores a 0")
+	public Double metrosPileta;
+	
+	public boolean tieneRiego;
 	
 	public Prioridades prioridad;
 	
