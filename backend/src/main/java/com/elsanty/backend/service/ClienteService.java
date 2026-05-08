@@ -87,6 +87,14 @@ public class ClienteService {
 		return toDTO(repo.save(c));
 	}
 	
+	public ClienteResponseDTO desactivar(Long id) {
+		Cliente c = repo.findById(id).orElseThrow(() -> new RecursoNoEncontradoException(this.CLIENTE_NO_ENCONTRADO));
+		
+		c.setActivo(false);
+		
+		return toDTO(repo.save(c));
+	}
+	
 	public void eliminar(Long id) {
 		if(!repo.existsById(id)) {
 			throw new RecursoNoEncontradoException(this.CLIENTE_NO_ENCONTRADO);
