@@ -14,6 +14,8 @@ import com.elsanty.backend.model.PlanMensual;
 import com.elsanty.backend.repository.ClienteRepository;
 import com.elsanty.backend.repository.PlanMensualRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class PlanMensualService {
 	
@@ -37,6 +39,7 @@ public class PlanMensualService {
 		return repo.findAll().stream().map(this::toDTO).collect(Collectors.toList());
 	}
 	
+	@Transactional
 	public PlanMensualResponseDTO crear(PlanMensualRequestDTO dto) {
 		PlanMensual pm = new PlanMensual();
 		
@@ -56,6 +59,7 @@ public class PlanMensualService {
 		return toDTO(repo.save(pm));
 	}
 	
+	@Transactional
 	public PlanMensualResponseDTO actualizar(Long id, PlanMensualUpdateDTO dto) {
 		PlanMensual pm = repo.findById(id).orElseThrow(() -> new RecursoNoEncontradoException(this.PLAN_NO_ENCONTRADO));
 
@@ -75,6 +79,7 @@ public class PlanMensualService {
 		return toDTO(repo.save(pm));
 	}
 	
+	@Transactional
 	public PlanMensualResponseDTO desactivar(Long id) {
 		PlanMensual pm = repo.findById(id).orElseThrow(() -> new RecursoNoEncontradoException(this.PLAN_NO_ENCONTRADO));
 
@@ -83,6 +88,7 @@ public class PlanMensualService {
 		return toDTO(repo.save(pm));
 	}
 	
+	@Transactional
 	public void eliminar(Long id) {
 		if(!repo.existsById(id)) {
 			throw new RecursoNoEncontradoException(this.PLAN_NO_ENCONTRADO);

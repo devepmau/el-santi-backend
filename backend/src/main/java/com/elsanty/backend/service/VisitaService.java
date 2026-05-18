@@ -15,6 +15,8 @@ import com.elsanty.backend.model.Visita;
 import com.elsanty.backend.repository.PlanMensualRepository;
 import com.elsanty.backend.repository.VisitaRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class VisitaService {
 	
@@ -39,6 +41,7 @@ public class VisitaService {
 		return repo.findAll().stream().map(this::toDTO).collect(Collectors.toList());
 	}
 	
+	@Transactional
 	public VisitaResponseDTO crear(VisitaRequestDTO dto) {
 		Visita v = new Visita();
 		
@@ -57,6 +60,7 @@ public class VisitaService {
 		return toDTO(repo.save(v));
 	}
 	
+	@Transactional
 	public VisitaResponseDTO actualizar(Long id, VisitaUpdateDTO dto) {
 		Visita v = repo.findById(id).orElseThrow(() -> new RecursoNoEncontradoException(this.VISITA_NO_ENCONTRADA));
 		
@@ -74,6 +78,7 @@ public class VisitaService {
 		return toDTO(repo.save(v));
 	}
 	
+	@Transactional
 	public VisitaResponseDTO completar(Long id) {
 		Visita v = repo.findById(id).orElseThrow(() -> new RecursoNoEncontradoException(this.VISITA_NO_ENCONTRADA));
 		
@@ -82,6 +87,7 @@ public class VisitaService {
 		return toDTO(repo.save(v));
 	}
 	
+	@Transactional
 	public VisitaResponseDTO cancelar(Long id) {
 		Visita v = repo.findById(id).orElseThrow(() -> new RecursoNoEncontradoException(this.VISITA_NO_ENCONTRADA));
 		
@@ -90,6 +96,7 @@ public class VisitaService {
 		return toDTO(repo.save(v));
 	}
 	
+	@Transactional
 	public void eliminar(Long id) {
 		if(!repo.existsById(id)) {
 			throw new RecursoNoEncontradoException(this.VISITA_NO_ENCONTRADA);

@@ -12,6 +12,8 @@ import com.elsanty.backend.exception.RecursoNoEncontradoException;
 import com.elsanty.backend.model.Trabajo;
 import com.elsanty.backend.repository.TrabajoRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class TrabajoService {
 	
@@ -33,6 +35,7 @@ public class TrabajoService {
 		return repo.findAll().stream().map(this::toDTO).collect(Collectors.toList());
 	}
 	
+	@Transactional
 	public TrabajoResponseDTO crear(TrabajoRequestDTO dto) {
 		Trabajo t = new Trabajo();
 		
@@ -45,6 +48,7 @@ public class TrabajoService {
 		return toDTO(repo.save(t));
 	}
 	
+	@Transactional
 	public TrabajoResponseDTO actualizar(Long id, TrabajoUpdateDTO dto) {
 		Trabajo t = repo.findById(id).orElseThrow(() -> new RecursoNoEncontradoException(this.TRABAJO_NO_ENCONTRADO));
 		
@@ -57,6 +61,7 @@ public class TrabajoService {
 		return toDTO(repo.save(t));
 	}
 	
+	@Transactional
 	public TrabajoResponseDTO desactivar(Long id) {
 		Trabajo t = repo.findById(id).orElseThrow(() -> new RecursoNoEncontradoException(this.TRABAJO_NO_ENCONTRADO));
 		
@@ -65,6 +70,7 @@ public class TrabajoService {
 		return toDTO(repo.save(t));
 	}
 	
+	@Transactional
 	public void eliminar(Long id) {
 		if(!repo.existsById(id)) {
 			throw new RecursoNoEncontradoException(this.TRABAJO_NO_ENCONTRADO);

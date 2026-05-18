@@ -13,6 +13,8 @@ import com.elsanty.backend.exception.RecursoNoEncontradoException;
 import com.elsanty.backend.model.Cliente;
 import com.elsanty.backend.repository.ClienteRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class ClienteService {
 	
@@ -34,6 +36,7 @@ public class ClienteService {
 		return repo.findAll().stream().map(this::toDTO).collect(Collectors.toList());
 	}
 	
+	@Transactional
 	public ClienteResponseDTO crear(ClienteRequestDTO dto) {
 		Cliente c = new Cliente();
 		
@@ -61,6 +64,7 @@ public class ClienteService {
 		return toDTO(repo.save(c));
 	}
 	
+	@Transactional
 	public ClienteResponseDTO actualizar(Long id, ClienteUpdateDTO dto) {
 		Cliente c = repo.findById(id).orElseThrow(() -> new RecursoNoEncontradoException(this.CLIENTE_NO_ENCONTRADO));
 
@@ -87,6 +91,7 @@ public class ClienteService {
 		return toDTO(repo.save(c));
 	}
 	
+	@Transactional
 	public ClienteResponseDTO desactivar(Long id) {
 		Cliente c = repo.findById(id).orElseThrow(() -> new RecursoNoEncontradoException(this.CLIENTE_NO_ENCONTRADO));
 		
@@ -95,6 +100,7 @@ public class ClienteService {
 		return toDTO(repo.save(c));
 	}
 	
+	@Transactional
 	public void eliminar(Long id) {
 		if(!repo.existsById(id)) {
 			throw new RecursoNoEncontradoException(this.CLIENTE_NO_ENCONTRADO);
