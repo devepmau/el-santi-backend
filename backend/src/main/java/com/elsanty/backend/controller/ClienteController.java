@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.elsanty.backend.dto.ClienteRequestDTO;
-import com.elsanty.backend.dto.ClienteResponseDTO;
-import com.elsanty.backend.dto.ClienteUpdateDTO;
+import com.elsanty.backend.dto.request.ClienteRequestDTO;
+import com.elsanty.backend.dto.response.ClienteResponseDTO;
+import com.elsanty.backend.dto.update.ClienteUpdateDTO;
 import com.elsanty.backend.service.ClienteService;
 
 import io.swagger.v3.oas.annotations.Operation;

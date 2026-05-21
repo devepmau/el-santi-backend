@@ -5,9 +5,9 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import com.elsanty.backend.dto.VisitaRequestDTO;
-import com.elsanty.backend.dto.VisitaResponseDTO;
-import com.elsanty.backend.dto.VisitaUpdateDTO;
+import com.elsanty.backend.dto.request.VisitaRequestDTO;
+import com.elsanty.backend.dto.response.VisitaResponseDTO;
+import com.elsanty.backend.dto.update.VisitaUpdateDTO;
 import com.elsanty.backend.enums.EstadoVisita;
 import com.elsanty.backend.exception.RecursoNoEncontradoException;
 import com.elsanty.backend.model.PlanMensual;

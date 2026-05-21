@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.elsanty.backend.dto.VisitaRequestDTO;
-import com.elsanty.backend.dto.VisitaResponseDTO;
-import com.elsanty.backend.dto.VisitaUpdateDTO;
+import com.elsanty.backend.dto.request.VisitaRequestDTO;
+import com.elsanty.backend.dto.response.VisitaResponseDTO;
+import com.elsanty.backend.dto.update.VisitaUpdateDTO;
 import com.elsanty.backend.service.VisitaService;
 
 import io.swagger.v3.oas.annotations.Operation;

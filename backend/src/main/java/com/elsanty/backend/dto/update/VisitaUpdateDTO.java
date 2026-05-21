@@ -1,4 +1,4 @@
-package com.elsanty.backend.dto;
+package com.elsanty.backend.dto.update;
 
 import java.time.LocalDateTime;
 

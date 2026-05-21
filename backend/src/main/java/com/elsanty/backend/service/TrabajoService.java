@@ -5,9 +5,9 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import com.elsanty.backend.dto.TrabajoRequestDTO;
-import com.elsanty.backend.dto.TrabajoResponseDTO;
-import com.elsanty.backend.dto.TrabajoUpdateDTO;
+import com.elsanty.backend.dto.request.TrabajoRequestDTO;
+import com.elsanty.backend.dto.response.TrabajoResponseDTO;
+import com.elsanty.backend.dto.update.TrabajoUpdateDTO;
 import com.elsanty.backend.exception.RecursoNoEncontradoException;
 import com.elsanty.backend.model.Trabajo;
 import com.elsanty.backend.repository.TrabajoRepository;

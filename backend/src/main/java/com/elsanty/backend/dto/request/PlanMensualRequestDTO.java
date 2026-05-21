@@ -1,4 +1,4 @@
-package com.elsanty.backend.dto;
+package com.elsanty.backend.dto.request;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

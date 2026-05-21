@@ -5,10 +5,10 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import com.elsanty.backend.dto.TrabajoResponseDTO;
-import com.elsanty.backend.dto.VisitaTrabajoRequestDTO;
-import com.elsanty.backend.dto.VisitaTrabajoResponseDTO;
-import com.elsanty.backend.dto.VisitaTrabajoUpdateDTO;
+import com.elsanty.backend.dto.request.VisitaTrabajoRequestDTO;
+import com.elsanty.backend.dto.response.TrabajoResponseDTO;
+import com.elsanty.backend.dto.response.VisitaTrabajoResponseDTO;
+import com.elsanty.backend.dto.update.VisitaTrabajoUpdateDTO;
 import com.elsanty.backend.exception.RecursoNoEncontradoException;
 import com.elsanty.backend.model.Trabajo;
 import com.elsanty.backend.model.Visita;

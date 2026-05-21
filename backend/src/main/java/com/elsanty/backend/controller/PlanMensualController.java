@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.elsanty.backend.dto.PlanMensualRequestDTO;
-import com.elsanty.backend.dto.PlanMensualResponseDTO;
-import com.elsanty.backend.dto.PlanMensualUpdateDTO;
+import com.elsanty.backend.dto.request.PlanMensualRequestDTO;
+import com.elsanty.backend.dto.response.PlanMensualResponseDTO;
+import com.elsanty.backend.dto.update.PlanMensualUpdateDTO;
 import com.elsanty.backend.service.PlanMensualService;
 
 import io.swagger.v3.oas.annotations.Operation;

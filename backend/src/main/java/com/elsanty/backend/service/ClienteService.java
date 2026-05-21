@@ -6,9 +6,9 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import com.elsanty.backend.dto.ClienteRequestDTO;
-import com.elsanty.backend.dto.ClienteResponseDTO;
-import com.elsanty.backend.dto.ClienteUpdateDTO;
+import com.elsanty.backend.dto.request.ClienteRequestDTO;
+import com.elsanty.backend.dto.response.ClienteResponseDTO;
+import com.elsanty.backend.dto.update.ClienteUpdateDTO;
 import com.elsanty.backend.exception.RecursoNoEncontradoException;
 import com.elsanty.backend.model.Cliente;
 import com.elsanty.backend.repository.ClienteRepository;

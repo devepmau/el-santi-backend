@@ -1,4 +1,4 @@
-package com.elsanty.backend.dto;
+package com.elsanty.backend.dto.update;
 
 import com.elsanty.backend.enums.Cortes;
 import com.elsanty.backend.enums.Horarios;

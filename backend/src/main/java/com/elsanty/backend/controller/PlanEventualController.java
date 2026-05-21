@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.elsanty.backend.dto.PlanEventualRequestDTO;
-import com.elsanty.backend.dto.PlanEventualResponseDTO;
-import com.elsanty.backend.dto.PlanEventualUpdateDTO;
+import com.elsanty.backend.dto.request.PlanEventualRequestDTO;
+import com.elsanty.backend.dto.response.PlanEventualResponseDTO;
+import com.elsanty.backend.dto.update.PlanEventualUpdateDTO;
 import com.elsanty.backend.service.PlanEventualService;
 
 import io.swagger.v3.oas.annotations.Operation;

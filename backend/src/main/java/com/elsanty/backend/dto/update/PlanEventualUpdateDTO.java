@@ -1,14 +1,16 @@
-package com.elsanty.backend.dto;
+package com.elsanty.backend.dto.update;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+
+import com.elsanty.backend.enums.EstadoVisita;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 
-public class PlanEventualRequestDTO {
+public class PlanEventualUpdateDTO {
 	
 	@Schema(description = "ID del cliente", example = "1")
 	@NotNull(message = "El cliente es obligatorio")
@@ -26,5 +28,7 @@ public class PlanEventualRequestDTO {
 	@NotNull(message = "El precio es obligatorio")
 	@Positive(message = "El precio debe ser mayor a 0")
 	public BigDecimal precio;
-
+	
+	public EstadoVisita estado;
+	
 }
