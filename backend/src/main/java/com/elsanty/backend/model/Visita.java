@@ -3,7 +3,7 @@ package com.elsanty.backend.model;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
-import com.elsanty.backend.enums.EstadoVisita;
+import com.elsanty.backend.enums.Estado;
 
 @Entity
 @Table(name = "visitas")
@@ -20,7 +20,7 @@ public class Visita {
     private LocalDateTime fecha;
 
     @Enumerated(EnumType.STRING)
-    private EstadoVisita estado;
+    private Estado estado;
 
     private String observaciones;
 
@@ -38,7 +38,7 @@ public class Visita {
 		return fecha;
 	}
 
-	public EstadoVisita getEstado() {
+	public Estado getEstado() {
 		return estado;
 	}
 
@@ -55,7 +55,7 @@ public class Visita {
 		this.fecha = fecha;
 	}
 
-	public void setEstado(EstadoVisita estado) {
+	public void setEstado(Estado estado) {
 		this.estado = estado;
 	}
 

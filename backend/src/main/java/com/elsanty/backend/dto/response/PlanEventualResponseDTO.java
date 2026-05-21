@@ -3,7 +3,7 @@ package com.elsanty.backend.dto.response;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import com.elsanty.backend.enums.EstadoVisita;
+import com.elsanty.backend.enums.Estado;
 
 public class PlanEventualResponseDTO {
 	
@@ -14,6 +14,6 @@ public class PlanEventualResponseDTO {
 	public LocalDate fechaInicio;
 	public LocalDate fechaDeFin;
 	public BigDecimal precio;
-	public EstadoVisita estado;
+	public Estado estado;
 
 }

@@ -3,7 +3,7 @@ package com.elsanty.backend.enums;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum EstadoVisita {
+public enum Estado {
 
 	PENDIENTE("Pendiente"),
     REALIZADA("Realizada"),
@@ -11,7 +11,7 @@ public enum EstadoVisita {
 
     private final String valor;
 
-    EstadoVisita(String valor) {
+    Estado(String valor) {
         this.valor = valor;
     }
 
@@ -21,8 +21,8 @@ public enum EstadoVisita {
     }
 
     @JsonCreator
-    public static EstadoVisita fromValue(String value) {
-        for (EstadoVisita ev : values()) {
+    public static Estado fromValue(String value) {
+        for (Estado ev : values()) {
             if (ev.valor.equalsIgnoreCase(value)) {
                 return ev;
             }

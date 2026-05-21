@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.elsanty.backend.dto.request.VisitaRequestDTO;
 import com.elsanty.backend.dto.response.VisitaResponseDTO;
 import com.elsanty.backend.dto.update.VisitaUpdateDTO;
-import com.elsanty.backend.enums.EstadoVisita;
+import com.elsanty.backend.enums.Estado;
 import com.elsanty.backend.exception.RecursoNoEncontradoException;
 import com.elsanty.backend.model.PlanMensual;
 import com.elsanty.backend.model.Visita;
@@ -54,7 +54,7 @@ public class VisitaService {
 		
 		v.setPlanMensual(pm);
 		v.setFecha(dto.fecha);
-		v.setEstado(EstadoVisita.PENDIENTE);
+		v.setEstado(Estado.PENDIENTE);
 		v.setObservaciones(dto.observaciones);
 		
 		return toDTO(repo.save(v));
@@ -82,7 +82,7 @@ public class VisitaService {
 	public VisitaResponseDTO completar(Long id) {
 		Visita v = repo.findById(id).orElseThrow(() -> new RecursoNoEncontradoException(this.VISITA_NO_ENCONTRADA));
 		
-		v.setEstado(EstadoVisita.REALIZADA);
+		v.setEstado(Estado.REALIZADA);
 		
 		return toDTO(repo.save(v));
 	}
@@ -91,7 +91,7 @@ public class VisitaService {
 	public VisitaResponseDTO cancelar(Long id) {
 		Visita v = repo.findById(id).orElseThrow(() -> new RecursoNoEncontradoException(this.VISITA_NO_ENCONTRADA));
 		
-		v.setEstado(EstadoVisita.CANCELADA);
+		v.setEstado(Estado.CANCELADA);
 		
 		return toDTO(repo.save(v));
 	}

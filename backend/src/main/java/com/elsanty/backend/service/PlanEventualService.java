@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.elsanty.backend.dto.request.PlanEventualRequestDTO;
 import com.elsanty.backend.dto.response.PlanEventualResponseDTO;
 import com.elsanty.backend.dto.update.PlanEventualUpdateDTO;
-import com.elsanty.backend.enums.EstadoVisita;
+import com.elsanty.backend.enums.Estado;
 import com.elsanty.backend.exception.RecursoNoEncontradoException;
 import com.elsanty.backend.model.Cliente;
 import com.elsanty.backend.model.PlanEventual;
@@ -62,7 +62,7 @@ public class PlanEventualService {
 		pe.setFechaDeInicio(dto.fechaDeInicio);
 		pe.setFechaDeFin(dto.fechaDeFin);
 		pe.setPrecio(dto.precio);
-		pe.setEstado(EstadoVisita.PENDIENTE);
+		pe.setEstado(Estado.PENDIENTE);
 		
 		return toDTO(repo.save(pe));
 	}
@@ -99,7 +99,7 @@ public class PlanEventualService {
 				.orElseThrow(() -> new RecursoNoEncontradoException(this.PLAN_NO_ENCONTRADO));
 		
 		pe.setFechaDeFin(LocalDate.now());
-		pe.setEstado(EstadoVisita.CANCELADA);
+		pe.setEstado(Estado.CANCELADA);
 		
 		return toDTO(repo.save(pe));
 	}
@@ -110,7 +110,7 @@ public class PlanEventualService {
 				.orElseThrow(() -> new RecursoNoEncontradoException(this.PLAN_NO_ENCONTRADO));
 		
 		pe.setFechaDeFin(LocalDate.now());
-		pe.setEstado(EstadoVisita.REALIZADA);
+		pe.setEstado(Estado.REALIZADA);
 		
 		return toDTO(repo.save(pe));
 	}
@@ -120,7 +120,7 @@ public class PlanEventualService {
 		PlanEventual pe = repo.findById(id)
 				.orElseThrow(() -> new RecursoNoEncontradoException(this.PLAN_NO_ENCONTRADO));
 
-		if (pe.getEstado() != EstadoVisita.CANCELADA) {
+		if (pe.getEstado() != Estado.CANCELADA) {
 			throw new IllegalArgumentException("Solo se pueden reactivar planes cancelados");
 		}
 		
@@ -131,7 +131,7 @@ public class PlanEventualService {
 		}
 
 		pe.setFechaDeFin(fechaNueva);
-		pe.setEstado(EstadoVisita.PENDIENTE);
+		pe.setEstado(Estado.PENDIENTE);
 
 		return toDTO(repo.save(pe));
 	}
@@ -148,7 +148,7 @@ public class PlanEventualService {
 		
 		pe.setFechaDeInicio(fechaInicio);
 		pe.setFechaDeFin(fechaFin);
-		pe.setEstado(EstadoVisita.PENDIENTE);
+		pe.setEstado(Estado.PENDIENTE);
 		
 		return toDTO(repo.save(pe));
 	}

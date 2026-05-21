@@ -3,7 +3,7 @@ package com.elsanty.backend.dto.update;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import com.elsanty.backend.enums.EstadoVisita;
+import com.elsanty.backend.enums.Estado;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.FutureOrPresent;
@@ -29,6 +29,6 @@ public class PlanEventualUpdateDTO {
 	@Positive(message = "El precio debe ser mayor a 0")
 	public BigDecimal precio;
 	
-	public EstadoVisita estado;
+	public Estado estado;
 	
 }

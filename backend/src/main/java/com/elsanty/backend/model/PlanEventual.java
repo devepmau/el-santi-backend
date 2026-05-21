@@ -3,7 +3,7 @@ package com.elsanty.backend.model;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import com.elsanty.backend.enums.EstadoVisita;
+import com.elsanty.backend.enums.Estado;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -35,7 +35,7 @@ public class PlanEventual {
 	private BigDecimal precio;
 	
 	@Enumerated(EnumType.STRING)
-	private EstadoVisita estado;
+	private Estado estado;
 
 	//GETTERS
 	
@@ -59,7 +59,7 @@ public class PlanEventual {
 		return precio;
 	}
 
-	public EstadoVisita getEstado() {
+	public Estado getEstado() {
 		return estado;
 	}
 
@@ -81,7 +81,7 @@ public class PlanEventual {
 		this.precio = precio;
 	}
 
-	public void setEstado(EstadoVisita estado) {
+	public void setEstado(Estado estado) {
 		this.estado = estado;
 	}
 
