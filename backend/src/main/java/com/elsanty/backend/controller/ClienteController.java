@@ -61,6 +61,12 @@ public class ClienteController {
 		return service.desactivar(id);
 	}
 	
+	@Operation(summary = "Reactivar un cliente")
+	@PutMapping("/{id}/activar")
+	public ClienteResponseDTO reactivar(@PathVariable Long id) {
+		return service.reactivar(id);
+	}
+	
 	@Operation(summary = "Eliminar un cliente")
 	@DeleteMapping("/{id}")
 	public void eliminar(@PathVariable Long id) {

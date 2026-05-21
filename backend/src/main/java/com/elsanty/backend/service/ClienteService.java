@@ -101,6 +101,15 @@ public class ClienteService {
 	}
 	
 	@Transactional
+	public ClienteResponseDTO reactivar(Long id) {
+		Cliente c = repo.findById(id).orElseThrow(() -> new RecursoNoEncontradoException(this.CLIENTE_NO_ENCONTRADO));
+		
+		c.setActivo(true);
+		
+		return toDTO(repo.save(c));
+	}
+	
+	@Transactional
 	public void eliminar(Long id) {
 		if(!repo.existsById(id)) {
 			throw new RecursoNoEncontradoException(this.CLIENTE_NO_ENCONTRADO);
