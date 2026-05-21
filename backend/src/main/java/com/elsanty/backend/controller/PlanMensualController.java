@@ -21,7 +21,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/planes")
+@RequestMapping("/planes-mensuales")
 @CrossOrigin(origins = "http://localhost:3000")
 public class PlanMensualController {
 	
